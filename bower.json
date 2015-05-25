@@ -4,6 +4,7 @@
   "dependencies": {
     "bootstrap": "~3.3.4",
     "jquery-validation": "~1.13.1",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "jquery.complexify.js": "*"
   }
 }

@@ -19,170 +19,193 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <h1>Práctica validación formularios</h1>
-            <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <h1>Práctica validación formularios</h1>
+                <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+            </div>
         </div>
     </div>
     <div class="container">
-        <form id="frmalta" class="form-horizontal
-" novalidate>
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Nombre</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+        <form id="frmalta" class="form-horizontal" novalidate>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Información de contacto</h3>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="apellido" class="col-sm-2 control-label">Apellidos</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Introduce tus apellidos">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="telefono" class="col-sm-2 control-label">Telefono</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Introduce tu telefono">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Introduce tu email">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email2" class="col-sm-2 control-label">Email ¡otra vez!</label>
-                <div class="col-sm-4">
-                    <input type="email" class="form-control" id="email2" name="email2" placeholder="Introduce otra vez tu email">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="conocido" class="col-sm-2 control-label">¿Como nos has conocido?</label>
-                <div class="col-sm-4">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="conocido" id="optionsRadios1" value="option1" checked> Prefiero no contestar
-                        </label>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="conocido" id="optionsRadios2" value="option2"> Publicidad
-                        </label>
+                    <div class="form-group">
+                        <label for="apellido" class="col-sm-2 control-label">Apellidos</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Introduce tus apellidos">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="conocido" id="optionsRadios3" value="option3"> Profesionales del sector
-                        </label>
+                    <div class="form-group">
+                        <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Introduce tu telefono">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="conocido" id="optionsRadios4" value="option4"> A través de un amigo o conocido
-                        </label>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Introduce tu email">
+                        </div>
                     </div>
-                </div>
-            </div>
-            <hr class="featurette-divider">
-            <div class="form-group">
-                <label for="conocido" class="col-sm-2 control-label">Demandante</label>
-                <div class="col-sm-4">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Particular
-                        </label>
+                    <div class="form-group">
+                        <label for="email2" class="col-sm-2 control-label">Email ¡otra vez!</label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="email2" name="email2" placeholder="Introduce otra vez tu email">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Empresa
-                        </label>
+                    <div class="form-group">
+                        <label for="conocido" class="col-sm-2 control-label">¿Como nos has conocido?</label>
+                        <div class="col-sm-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"  id="optionsRadios1" value="option1" name="conocido"> Prefiero no contestar
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"  id="optionsRadios2" value="option2" name="conocido"> Publicidad
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"  id="optionsRadios3" value="option3" name="conocido"> Profesionales del sector
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"  id="optionsRadios4" value="option4" name="conocido"> A través de un amigo o conocido
+                                </label>
+                            </div>
+                            <label for="conocido" class="error"></label>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="cifnif" class="col-sm-2 control-label">CIF/NIF</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="cifnif" name="cifnif" placeholder="Introduce tu telefono">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Datos de facturación</h3>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="nomempresa" class="col-sm-2 control-label">Nombre/Empresa</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nomempresa" name="nomempresa" placeholder="Introduce el nombre">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="direccion" class="col-sm-2 control-label">Dirección</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduce direccion">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="codpostal" class="col-sm-2 control-label">CP</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="codpostal" name="codpostal" placeholder="Introduce CP">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="localidad" class="col-sm-2 control-label">Localidad</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="localidad" name="localidad">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="provincia" class="col-sm-2 control-label">Provincia</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="provincia" name="provincia">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="pais" class="col-sm-2 control-label">País</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="pais" name="pais">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="iban" class="col-sm-2 control-label">Codigo IBAN</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="iban" name="iban">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="conocido" class="col-sm-2 control-label">Forma de pago</label>
-                <div class="col-sm-4">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Mensual
-                        </label>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="conocido" class="col-sm-2 control-label">Demandante</label>
+                        <div class="col-sm-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Particular
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Empresa
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Trimestral
-                        </label>
+                    <div class="form-group">
+                        <label for="cifnif" class="col-sm-2 control-label">CIF/NIF</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="cifnif" name="cifnif" placeholder="Introduce tu telefono">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Anual
-                        </label>
+                    <div class="form-group">
+                        <label for="nomempresa" class="col-sm-2 control-label">Nombre/Empresa</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="nomempresa" name="nomempresa" placeholder="Introduce el nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion" class="col-sm-2 control-label">Dirección</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduce direccion">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="codpostal" class="col-sm-2 control-label">CP</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="codpostal" name="codpostal" placeholder="Introduce CP">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="localidad" class="col-sm-2 control-label">Localidad</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="localidad" name="localidad">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="provincia" class="col-sm-2 control-label">Provincia</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="provincia" name="provincia">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pais" class="col-sm-2 control-label">País</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="pais" name="pais">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="iban" class="col-sm-2 control-label">Codigo IBAN</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="iban" name="iban">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="conocido" class="col-sm-2 control-label">Forma de pago</label>
+                        <div class="col-sm-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Mensual
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Trimestral
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Anual
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="usuario" class="col-sm-2 control-label">Usuario</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="usuario" name="usuario">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Datos de acceso</h3>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="contraseña" class="col-sm-2 control-label">Contraseña</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="contraseña" name="contraseña">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="contraseña2" class="col-sm-2 control-label">Repetir contraseña</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="contraseña2" name="contraseña2">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="usuario" class="col-sm-2 control-label">Usuario</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="usuario" name="usuario">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contraseña" class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="pass" name="pass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contraseña2" class="col-sm-2 control-label">Repetir contraseña</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="pass2" name="pass2">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -197,10 +220,11 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="bower_components/jquery.complexify.js/jquery.complexify.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/validate.js"></script>
+    <script src="scripts/mensajes_es.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>
