@@ -31,6 +31,13 @@ $(document).ready(function() {
                 digits: true,
                 minlength: 4,
                 maxlength: 5
+            },  
+            pass: {
+                pass: true,
+                required: true
+            },
+            pass2:{
+                equalTo: '#pass'
             }
 
 
@@ -40,12 +47,24 @@ $(document).ready(function() {
         //'errorLabelContainer':'#errores'        
 
     });
+    //si el codigo postal son 4 digitos autocompleta con un 0 a la izquierda
     $('#codpostal').focusout(function() {
         var caracteres = $('#codpostal').val();
         if (caracteres.length === 4){
             $('#codpostal').val('0' + caracteres);
         }
     });
-    
+    //verifica la seguridad de la passsword con plugin complexify
+    $('#complexify #pass').complexify({}, function (valid, complexity) {
+        var progressBar = $('#complexify #complexity-bar');
 
+        progressBar.toggleClass('progress-bar-success', valid);
+        progressBar.toggleClass('progress-bar-danger', !valid);
+        progressBar.css({'width': complexity + '%'});
+
+        $('#complexify #complexity').text(Math.round(complexity) + '%');
+    });
+    
+    $('#pass').passField({showWarn: false, showTip: false, allowEmpty: false});
+    
 });
