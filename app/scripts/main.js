@@ -3,8 +3,8 @@ $(document).ready(function() {
     $('#frmalta').validate({
         rules: {
             nombre: {
-                required: true
-
+                required: true,
+                minlength: 4
             },
             apellido: {
                 required: true
@@ -12,12 +12,13 @@ $(document).ready(function() {
             telefono: {
                 required: true,
                 digits: true,
-                minlength: 9
+                minlength: 9,
+                maxlength: 9
             },
             email: {
                 email: true,
                 required: true,
-                remote: 'http://www.futbolistas.com/php/validar_email_db.php'
+                remote: 'http://localhost/validacion/validar_email_db.php'
             },
             email2: {
                 equalTo: '#email'
@@ -37,6 +38,30 @@ $(document).ready(function() {
             },
             pass2: {
                 equalTo: '#pass'
+            },
+            localidad: {
+                required: true
+            },
+            iban: {
+                iban: true,
+                required: true
+            },
+            usuario: {
+                required: true,
+                minlength: 4
+            },
+            cifnif: {
+                required: true,
+                nifES: function() {
+                    if ($('#particular').val() === '1') {
+                        return true;
+                    }
+                },
+                cifES: function() {
+                    if ($('#empresa').val() === '2') {
+                        return true;
+                    }
+                }
             }
 
 
@@ -83,10 +108,36 @@ $(document).ready(function() {
             }
         }
     });
-
-    $('#nombre,#apellido').on('change',function () {
-        var value = $(this).val();
-        $('#nomempresa').val(value);
+    //autocompletamos el nombre del particular
+    $('#nombre,#apellido').on('change', function() {
+        var nombre = $('#nombre').val();
+        var apellido = $('#apellido').val();
+        $('#nomempresa').val(nombre + ' ' + apellido);
+        $('#nomempresa').attr('readonly', true);
     });
+    //si elegimos empresa 
+    $('#empresa').click(function() {
+        $('#lcifnif').text('CIF');
 
+        $('#lnomemp').text('Empresa');
+        $('#nomempresa').val(' ');
+        $('#nomempresa').attr('readonly', false);
+    });
+    //si elegimos particular
+    $('#particular').click(function() {
+        $('#lcifnif').text('NIF');
+        $('#lnomemp').text('Nombre');
+        var nombre = $('#nombre').val();
+        var apellido = $('#apellido').val();
+        $('#nomempresa').val(nombre + ' ' + apellido);
+        $('#nomempresa').attr('readonly', true);
+    });
+    $('#email').on('change', function() {
+        var dato = $('#email').val();
+        if (dato.length >= 4) {
+            dato = dato.substring(0, 4);
+        }
+        $('#usuario').val(dato);
+        $('#usuario').attr('readonly', true);
+    });
 });
