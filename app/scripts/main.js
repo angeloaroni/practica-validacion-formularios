@@ -19,7 +19,8 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
-                remote: 'http://localhost/validacion/validar_email_db.php'
+                //remote: 'http://localhost/validacion/validar_email_db.php'
+                remote: 'http://www.futbolistas.com/php/validar_email_db.php'
             },
             email2: {
                 equalTo: '#email'
@@ -95,7 +96,7 @@ $(document).ready(function() {
         submitHandler: function(frmalta) {
             var cantidad = ($('input:radio[name=pago]:checked').val());
             if (cantidad === 'mensual') {
-                confirm('Se va a proceder a dar de alta \nEl tipo de pago es mensual \nLa primera cuota es de 50€');
+                confirm('Se va a proceder a dar de alta \n El tipo de pago es mensual \nLa primera cuota es de 50€');
             } else if (cantidad === 'trimestral') {
                 confirm('Se va a proceder a dar de alta \nEl tipo de pago es trimestral \nLa primera cuota es de 140€');
             } else {
@@ -150,17 +151,20 @@ $(document).ready(function() {
         $('#nomempresa').attr('readonly', true);
     });
     //si elegimos empresa 
-    $('#empresa').click(function() {
+    $('#empresa').click(function() {        
         $('#lcifnif').text('CIF');
-
-        $('#lnomemp').text('Empresa');
+        $('#cifnif').attr('placeholder', 'Introduce tu CIF');
+        $('#lnomemp').text('Nombre Empresa');
         $('#nomempresa').val(' ');
+        //$('#nomempresa').attr('placeholder', 'Nombre de la empresa');
         $('#nomempresa').attr('readonly', false);
+
     });
     //si elegimos particular
     $('#particular').click(function() {
         $('#lcifnif').text('NIF');
         $('#lnomemp').text('Nombre');
+        $('#cifnif').attr('placeholder', 'Introduce tu NIF');
         var nombre = $('#nombre').val();
         var apellido = $('#apellido').val();
         $('#nomempresa').val(nombre + ' ' + apellido);
