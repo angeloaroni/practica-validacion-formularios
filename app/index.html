@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <h1>Práctica validación formularios</h1>
-                <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+                <p>Link de repositorio de la practiva validacion formulario <a href="https://github.com/angeloaroni/practica-validacion-formularios">github-angeloaroni</a>.</p>
             </div>
         </div>
     </div>
@@ -101,13 +101,13 @@
                         <label for="conocido" class="col-sm-2 control-label">Demandante</label>
                         <div class="col-sm-4">
                             <div class="radio">
-                                <label for="demandante">
-                                    <input type="radio" name="optionsRadios" id="particular" value="1" checked> Particular
+                                <label for="particular">
+                                    <input type="radio" name="demandante" id="particular" value="1" checked> Particular
                                 </label>
                             </div>
                             <div class="radio">
                                 <label for="empresa">
-                                    <input type="radio" name="optionsRadios" id="empresa" value="2"> Empresa
+                                    <input type="radio" name="demandante" id="empresa" value="2"> Empresa
                                 </label>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                     <div class="form-group">
                         <label for="cifnif" id="lcifnif" class="col-sm-2 control-label">NIF</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="cifnif" name="cifnif" placeholder="Introduce tu telefono">
+                            <input type="text" class="form-control" id="cifnif" name="cifnif" placeholder="Introduce tu NIF">
                         </div>
                     </div>
                     <div class="form-group">
@@ -135,7 +135,7 @@
                         <div class="col-sm-4">
                             <!--<input type="text" class="form-control" id="pais" name="pais">  -->
                             <select name="pais" class="form-control" id="pais">
-                                <option value="-1">Seleccione una opción</option>
+                                <option value="">Seleccione una opción</option>
                                 <option value="AF/0/1">Afganistan</option>
                                 <option value="AL/0/1">Albania</option>
                                 <option value="DE/0/1">Alemania</option>
@@ -399,7 +399,7 @@
                     <div class="form-group">
                         <label for="localidad" class="col-sm-2 control-label">Localidad</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="localidad" name="localidad">
+                            <input type="text" class="form-control" id="localidad" name="localidad" placeholder="Introduce localidad">
                         </div>
                     </div>
                     <div class="form-group">
@@ -407,7 +407,7 @@
                         <div class="col-sm-4">
                             <!--<input type="text" class="form-control" id="provincia" name="provincia">  -->
                             <select class="form-control" name="provincia" id="provincia">
-                                <option value="-1">Seleccione una opción</option>
+                                <option value="">Seleccione una opción</option>
                                 <option value="1">Alava</option>
                                 <option value="2">Albacete</option>
                                 <option value="3">Alicante</option>
@@ -466,27 +466,28 @@
                     <div class="form-group">
                         <label for="iban" class="col-sm-2 control-label">Codigo IBAN</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="iban" name="iban">
+                            <input type="text" class="form-control" id="iban" name="iban" placeholder="Introduce numero IBAN">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="conocido" class="col-sm-2 control-label">Forma de pago</label>
+                        <label for="pago" class="col-sm-2 control-label">Forma de pago</label>
                         <div class="col-sm-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Mensual
+                                    <input type="radio" name="pago" id="opcion1" value="mensual"> Mensual
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Trimestral
+                                    <input type="radio" name="pago" id="opcion2" value="trimestral"> Trimestral
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Anual
+                                    <input type="radio" name="pago" id="opcion3" value="anual"> Anual
                                 </label>
                             </div>
+                            <label for="pago" class="error"></label>
                         </div>
                     </div>
                 </div>
@@ -505,14 +506,12 @@
                     <div class="form-group">
                         <label for="contraseña" class="col-sm-2 control-label">Contraseña</label>
                         <div id="complexify" class="col-sm-4">
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Escriba password" passfield="true">
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Escriba password" passField="true">
                             <div class="progress">
                                 <div id="complexity-bar" class="progress-bar" role="progressbar">
                                 </div>
                             </div>
-                            <p>
-                                <h4 id="complexity" class="pull-right">0%</h4>
-                            </p>
+                            <h4 id="complexity" class="pull-right">0%</h4>
                         </div>
                     </div>
                     <div class="form-group">
@@ -540,7 +539,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/mensajes_es.js"></script>
+    <script src="scripts/validate.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>

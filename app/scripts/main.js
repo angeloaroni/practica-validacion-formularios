@@ -2,6 +2,7 @@
 $(document).ready(function() {
     $('#frmalta').validate({
         rules: {
+
             nombre: {
                 required: true,
                 minlength: 4
@@ -33,7 +34,6 @@ $(document).ready(function() {
                 maxlength: 5
             },
             pass: {
-                pass: true,
                 required: true
             },
             pass2: {
@@ -53,23 +53,56 @@ $(document).ready(function() {
             cifnif: {
                 required: true,
                 nifES: function() {
-                    if ($('#particular').val() === '1') {
+                    if ($('input:radio[name=demandante]:checked').val() === '1') {
                         return true;
                     }
                 },
                 cifES: function() {
-                    if ($('#empresa').val() === '2') {
+                    if ($('input:radio[name=demandante]:checked').val() === '2') {
                         return true;
                     }
                 }
+            },
+            pais: {
+                required: true
+            },
+            direccion: {
+                required: true
+            },
+            provincia: {
+                required: true
+            },
+            nomempresa: {
+                required: true
+            },
+            pago: {
+                required: true
             }
 
-
-        } //,
+        },
+        messages: {
+            conocido: {
+                required: 'Dinos como nos conociste',
+            },
+            pago: {
+                required: 'Elige forma de pago',
+            }
+        }, //,
         //para que se muestre los errores encima del formulario
         //'wrapper': 'p',
-        //'errorLabelContainer':'#errores'        
-
+        //'errorLabelContainer':'#errores'   
+        //comportamiento si precionamos submit
+        submitHandler: function(frmalta) {
+            var cantidad = ($('input:radio[name=pago]:checked').val());
+            if (cantidad === 'mensual') {
+                confirm('Se va a proceder a dar de alta \nEl tipo de pago es mensual \nLa primera cuota es de 50€');
+            } else if (cantidad === 'trimestral') {
+                confirm('Se va a proceder a dar de alta \nEl tipo de pago es trimestral \nLa primera cuota es de 140€');
+            } else {
+                confirm('Se va a proceder a dar de alta \nEl tipo de pago es anual \nLa cuota es de 550€');
+            }
+            frmalta.submit();
+        }
     });
     //si el codigo postal son 4 digitos autocompleta con un 0 a la izquierda
     $('#codpostal').focusout(function() {
@@ -90,12 +123,13 @@ $(document).ready(function() {
 
         $('#complexify #complexity').text(Math.round(complexity) + '%');
     });
-
+    //otra opcion de passwors seguro con passfield
     $('#pass').passField({
         showWarn: false,
         showTip: false,
         allowEmpty: false
     });
+
     //Para quese complete la provincia escribiendo el codigo postal
     $('#codpostal').change(function() {
         if ($('#pais option:selected').val() === 'ES/0/0') {
@@ -132,12 +166,12 @@ $(document).ready(function() {
         $('#nomempresa').val(nombre + ' ' + apellido);
         $('#nomempresa').attr('readonly', true);
     });
+    //autocompletar nombre de usuario
     $('#email').on('change', function() {
         var dato = $('#email').val();
-        if (dato.length >= 4) {
-            dato = dato.substring(0, 4);
-        }
         $('#usuario').val(dato);
         $('#usuario').attr('readonly', true);
     });
+
+
 });
