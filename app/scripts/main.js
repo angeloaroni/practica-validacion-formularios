@@ -19,8 +19,8 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
-                //remote: 'http://localhost/validacion/validar_email_db.php'
-                remote: 'http://www.futbolistas.com/php/validar_email_db.php'
+                remote: './php/validar_email_db.php'
+                //remote: 'http://www.futbolistas.com/php/validar_email_db.php'
             },
             email2: {
                 equalTo: '#email'
@@ -53,16 +53,19 @@ $(document).ready(function() {
             },
             cifnif: {
                 required: true,
+                remote: 'http://www.futbolistas.com/php/validar_nif_db.php',
                 nifES: function() {
                     if ($('input:radio[name=demandante]:checked').val() === '1') {
                         return true;
                     }
+                
                 },
                 cifES: function() {
                     if ($('input:radio[name=demandante]:checked').val() === '2') {
                         return true;
                     }
                 }
+
             },
             pais: {
                 required: true
@@ -87,6 +90,9 @@ $(document).ready(function() {
             },
             pago: {
                 required: 'Elige forma de pago',
+            },
+            cifnif:{
+                remote: 'Este NIF ya axiste, por favor ingrese otro.',
             }
         }, //,
         //para que se muestre los errores encima del formulario

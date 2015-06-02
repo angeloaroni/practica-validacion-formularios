@@ -1,7 +1,7 @@
 <?php
 header("access-control-allow-origin: *");
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
-//ini_set('display_errors', '1');
+// ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
 $dbinfo = "mysql:dbname=usuario_validar;host=localhost";
 $user = "root";
@@ -15,13 +15,15 @@ try {
     echo "La conexi&oacute;n ha fallado: " . $e->getMessage();
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
-//$_REQUEST['nif'] = "73003600A";
-if (isset($_REQUEST['cifnif'])) {
+//$_REQUEST['email'] = "pepito@hotmail.com";
+if (isset($_REQUEST['email'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
-    //echo $_REQUEST['nif'];
-    $nif = $_REQUEST['cifnif'];
-    $sql = $db->prepare("SELECT * FROM usuario WHERE nif=?");
-    $sql->bindParam(1, $nif, PDO::PARAM_STR);
+    //echo $_REQUEST['email'];
+    $email = $_REQUEST['email'];
+    $sql = $db->prepare("SELECT * FROM usuario WHERE email=?");
+    $sql->bindParam(1, $email, PDO::PARAM_STR);
+    
+ 
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
      * ejecutada por el correspondiente objeto PDOStatement.Si la última sentencia SQL ejecutada por el objeto PDOStatement 
