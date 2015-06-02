@@ -53,7 +53,8 @@ $(document).ready(function() {
             },
             cifnif: {
                 required: true,
-                remote: 'http://www.futbolistas.com/php/validar_nif_db.php',
+                //remote: 'http://www.futbolistas.com/php/validar_nif_db.php',
+                remote: 'php/validar_nif_db.php',
                 nifES: function() {
                     if ($('input:radio[name=demandante]:checked').val() === '1') {
                         return true;
