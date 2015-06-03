@@ -19,7 +19,7 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
-                remote: 'php/validar_email_db.php'
+                remote: './php/validar_email_db.php'
                 //remote: 'http://www.futbolistas.com/php/validar_email_db.php'
             },
             email2: {
@@ -54,7 +54,7 @@ $(document).ready(function() {
             cifnif: {
                 required: true,
                 //remote: 'http://www.futbolistas.com/php/validar_nif_db.php',
-                remote: 'php/validar_nif_db.php',
+                remote: './php/validar_nif_db.php',
                 nifES: function() {
                     if ($('input:radio[name=demandante]:checked').val() === '1') {
                         return true;
